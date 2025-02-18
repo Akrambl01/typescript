@@ -23,14 +23,14 @@ function returnNumber(val: number) : number {
   console.log(returnString("abcd"));
   console.log(returnBoolean(true));
   
-  function returnType<T>(val: T) : T {
-    return val;
-  }
+  // function returnType<T>(val: T) : T {
+  //   return val;
+  // }
   
-  console.log(returnType<number>(100));
-  console.log(returnType<string>("abddd"));
-  console.log(returnType<boolean>(true));
-  console.log(returnType<number[]>([1, 2, 3, 4]));
+  // console.log(returnType<number>(100));
+  // console.log(returnType<string>("abddd"));
+  // console.log(returnType<boolean>(true));
+  // console.log(returnType<number[]>([1, 2, 3, 4]));
   
   
   /*
@@ -70,18 +70,18 @@ function returnNumber(val: number) : number {
     - Classes
   */
   
-  class User<T = string> {
+  class GenericUser<T = string> {
     constructor(public value: T) {}
     show(msg: T) : void {
       console.log(`${msg} - ${this.value}`);
     }
   }
   
-  let userOne = new User<string>("akram");
-  console.log(userOne.value);
-  userOne.show("Message");
+  let genericUserOne = new GenericUser<string>("akram");
+  console.log(genericUserOne.value);
+  genericUserOne.show("Message");
   
-  let userTwo = new User<number | string>(100);
+  let userTwo = new GenericUser<number | string>(100);
   console.log(userTwo.value);
   userTwo.show("Message");
   

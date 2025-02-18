@@ -18,12 +18,12 @@ class User1 {
     }
   }
   
-  let userOne = new User1("akram", 6000);
+  let uOne = new User1("akram", 6000);
   
-  console.log(userOne.u);
-  console.log(userOne.s);
-  console.log(userOne.msg());
-  console.log(userOne.sayMsg());
+  console.log(uOne.u);
+  console.log(uOne.s);
+  console.log(uOne.msg());
+  console.log(uOne.sayMsg());
   
   /*
     - Data Access Modifiers & Parameters Properties
@@ -39,7 +39,7 @@ class User1 {
     - It Should Remove All Annotations And Although Access Modifiers "Private For Example"
   */
   
-  class User {
+  class UserTwo {
     msg: () => string;
     constructor(private username: string, protected salary: number,public readonly address: string) {
       this.msg = function () {
@@ -51,18 +51,18 @@ class User1 {
     }
   }
   
-  let userOne = new User2("akram", 6000, "casa");
+  let uTwo = new UserTwo("akram", 6000, "casa");
   
-  // console.log(userOne.username);
-  // console.log(userOne.salary);
-  console.log(userOne.msg());
-  console.log(userOne.sayMsg());
+  // console.log(uTwo.username);
+  // console.log(uTwo.salary);
+  console.log(uTwo.msg());
+  console.log(uTwo.sayMsg());
   
   /*
     - Get And Set Accessors
   */
   
-  class User {
+  class User3 {
     public get username(): string {
       return this._username;
     }
@@ -86,14 +86,14 @@ class User1 {
     // }
   }
   
-  let userOne = new User3("akram", 8000, "Cairo");
+  let user = new User3("akram", 8000, "Cairo");
   
-  console.log(userOne.username);
-  userOne.username = "ali";
-  console.log(userOne.username);
-  console.log(userOne.salary);
-  console.log(userOne.msg());
-  console.log(userOne.sayMsg());
+  console.log(user.username);
+  user.username = "ali";
+  console.log(user.username);
+  console.log(user.salary);
+  console.log(user.msg());
+  console.log(user.sayMsg());
   
   /*
     - Static Members
@@ -106,13 +106,13 @@ class User1 {
     --- Don't Use "name, length, call"
   */
   
-  class User {
+  class User4 {
     private static created: number = 0;
     static getCount() : void {
       console.log(`${this.created} Objects Created`);
     }
     constructor(public username: string) {
-      User.created++;
+      User4.created++;
     }
   }
   
@@ -120,19 +120,19 @@ class User1 {
   let u2 = new User4("user");
   let u3 = new User4("test");
   // console.log(User.created);
-  User.getCount();
+  User4.getCount();
   
   /*
     - Implement Interface
   */
   
-  interface Settings {
+  interface MySettings {
     theme: boolean;
     font: string;
     save(): void;
   }
   
-  class User5 implements Settings {
+  class User5 implements MySettings {
     constructor(public username: string, public theme: boolean, public font: string) {}
     save(): void {
       console.log(`Saved`);

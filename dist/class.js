@@ -2,7 +2,7 @@
 /*
   Type Annotations With Class
 */
-class User {
+class User1 {
     constructor(username, salary) {
         this.u = username;
         this.s = salary;
@@ -14,11 +14,11 @@ class User {
         return `Hello ${this.u} Your Salary Is ${this.s}`;
     }
 }
-let userOne = new User("akram", 6000);
-console.log(userOne.u);
-console.log(userOne.s);
-console.log(userOne.msg());
-console.log(userOne.sayMsg());
+let uOne = new User1("akram", 6000);
+console.log(uOne.u);
+console.log(uOne.s);
+console.log(uOne.msg());
+console.log(uOne.sayMsg());
 /*
   - Data Access Modifiers & Parameters Properties
   --- Public
@@ -32,7 +32,7 @@ console.log(userOne.sayMsg());
   - TypeScript Is A Layer On Top Of JavaScript
   - It Should Remove All Annotations And Although Access Modifiers "Private For Example"
 */
-class User {
+class UserTwo {
     constructor(username, salary, address) {
         this.username = username;
         this.salary = salary;
@@ -45,15 +45,15 @@ class User {
         return `Hello ${this.username} Your Salary Is ${this.salary}`;
     }
 }
-let userOne = new User("akram", 6000, "casa");
-// console.log(userOne.username);
-// console.log(userOne.salary);
-console.log(userOne.msg());
-console.log(userOne.sayMsg());
+let uTwo = new UserTwo("akram", 6000, "casa");
+// console.log(uTwo.username);
+// console.log(uTwo.salary);
+console.log(uTwo.msg());
+console.log(uTwo.sayMsg());
 /*
   - Get And Set Accessors
 */
-class User {
+class User3 {
     get username() {
         return this._username;
     }
@@ -72,13 +72,13 @@ class User {
         return `Hello ${this._username} Your Salary Is ${this.salary}`;
     }
 }
-let userOne = new User("akram", 8000, "Cairo");
-console.log(userOne.username);
-userOne.username = "ali";
-console.log(userOne.username);
-console.log(userOne.salary);
-console.log(userOne.msg());
-console.log(userOne.sayMsg());
+let user = new User3("akram", 8000, "Cairo");
+console.log(user.username);
+user.username = "ali";
+console.log(user.username);
+console.log(user.salary);
+console.log(user.msg());
+console.log(user.sayMsg());
 /*
   - Static Members
   the static keyword is used to define static methods and properties within a class.
@@ -89,22 +89,22 @@ console.log(userOne.sayMsg());
 
   --- Don't Use "name, length, call"
 */
-class User {
+class User4 {
     static getCount() {
         console.log(`${this.created} Objects Created`);
     }
     constructor(username) {
         this.username = username;
-        User.created++;
+        User4.created++;
     }
 }
-User.created = 0;
-let u1 = new User("akram");
-let u2 = new User("user");
-let u3 = new User("test");
+User4.created = 0;
+let u1 = new User4("akram");
+let u2 = new User4("user");
+let u3 = new User4("test");
 // console.log(User.created);
-User.getCount();
-class User {
+User4.getCount();
+class User5 {
     constructor(username, theme, font) {
         this.username = username;
         this.theme = theme;
@@ -117,7 +117,7 @@ class User {
         console.log(`Updated`);
     }
 }
-let userOne = new User("akram", true, "Open Sans");
+let userOne = new User5("akram", true, "Open Sans");
 console.log(userOne.username);
 console.log(userOne.font);
 userOne.save();

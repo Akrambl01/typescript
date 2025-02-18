@@ -12,7 +12,16 @@
 let user1 = {
     id: 100,
     username: "akram",
-    country: "morocco"
+    country: "morocco",
+    sayHello() {
+        return `Hello ${this.username}`;
+    },
+    sayWelcome() {
+        return `Welcome ${this.username}`;
+    },
+    getDouble(n) {
+        return n * 2;
+    }
 };
 user1.country = "japan";
 console.log(user1);
@@ -21,7 +30,20 @@ function getData(data) {
     console.log(`Username Is ${data.username}`);
     console.log(`Country Is ${data.country}`);
 }
-getData({ id: 200, username: "ali", country: "fr" });
+getData({
+    id: 200,
+    username: "ali",
+    country: "fr",
+    sayHello() {
+        return `Hello ${this.username}`;
+    },
+    sayWelcome() {
+        return `Welcome ${this.username}`;
+    },
+    getDouble(n) {
+        return n * 2;
+    }
+});
 let user2 = {
     id: 100,
     username: "akrambl01",
@@ -51,9 +73,18 @@ let user3 = {
     username: "akram",
     country: "mar",
     role: "Mod",
-    protect: true
+    protect: true,
+    sayHello() {
+        return `Hello ${this.username}`;
+    },
+    sayWelcome() {
+        return `Welcome ${this.username}`;
+    },
+    getDouble(n) {
+        return n * 2;
+    }
 };
-console.log(user.id);
+console.log(user3.id);
 /*
   - Interface vs Type Aliases
   - Take A Look On HTMLElement Interface

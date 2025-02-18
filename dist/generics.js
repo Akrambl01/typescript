@@ -21,13 +21,13 @@ function returnBoolean(val) {
 console.log(returnNumber(100));
 console.log(returnString("abcd"));
 console.log(returnBoolean(true));
-function returnType(val) {
-    return val;
-}
-console.log(returnType(100));
-console.log(returnType("abddd"));
-console.log(returnType(true));
-console.log(returnType([1, 2, 3, 4]));
+// function returnType<T>(val: T) : T {
+//   return val;
+// }
+// console.log(returnType<number>(100));
+// console.log(returnType<string>("abddd"));
+// console.log(returnType<boolean>(true));
+// console.log(returnType<number[]>([1, 2, 3, 4]));
 /*
   - Arrow Function
   - Multiple Types
@@ -55,7 +55,7 @@ console.log(multipleTypes("akram", true));
   Generics
   - Classes
 */
-class User {
+class GenericUser {
     constructor(value) {
         this.value = value;
     }
@@ -63,10 +63,10 @@ class User {
         console.log(`${msg} - ${this.value}`);
     }
 }
-let userOne = new User("akram");
-console.log(userOne.value);
-userOne.show("Message");
-let userTwo = new User(100);
+let genericUserOne = new GenericUser("akram");
+console.log(genericUserOne.value);
+genericUserOne.show("Message");
+let userTwo = new GenericUser(100);
 console.log(userTwo.value);
 userTwo.show("Message");
 class Collection {

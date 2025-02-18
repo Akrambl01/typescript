@@ -18,7 +18,16 @@ interface User {
   let user1: User = {
     id: 100,
     username: "akram",
-    country: "morocco"
+    country: "morocco",
+    sayHello() {
+      return `Hello ${this.username}`;
+    },
+    sayWelcome() {
+      return `Welcome ${this.username}`;
+    },
+    getDouble(n) {
+      return n * 2;
+    }
   }
   
   user1.country = "japan";
@@ -31,7 +40,20 @@ interface User {
     console.log(`Country Is ${data.country}`);
   }
   
-  getData({ id: 200, username: "ali", country: "fr" });
+  getData({
+    id: 200,
+    username: "ali",
+    country: "fr",
+    sayHello() {
+      return `Hello ${this.username}`;
+    },
+    sayWelcome() {
+      return `Welcome ${this.username}`;
+    },
+    getDouble(n) {
+      return n * 2;
+    }
+  });
   
   /*
     - Interface Method And Parameters
@@ -108,10 +130,19 @@ interface User {
     username: "akram",
     country: "mar",
     role: "Mod",
-    protect: true
+    protect: true,
+    sayHello() {
+      return `Hello ${this.username}`;
+    },
+    sayWelcome() {
+      return `Welcome ${this.username}`;
+    },
+    getDouble(n: number) {
+      return n * 2;
+    }
   }
   
-  console.log(user.id);
+  console.log(user3.id);
   
   
   /*
